@@ -10,13 +10,13 @@
 #define R 1 //Lado derecho del rio
 
 #define BABY 0
-#define CRAP 1
+#define CRAB 1
 #define CONE 2
 
-int checkState(int itemSide[3])//Posicion 0 = Baby,Posicion 1 = Crap,Posicion 2 = Cone,
+int checkState(int itemSide[3])//Posicion 0 = Baby,Posicion 1 = Crab,Posicion 2 = Cone,
 {
 	/* RULES 
-	 Baby Crap Cone | flag
+	 Baby Crab Cone | flag
 	 * R    R    R    WIN
 	 * R    R    L    LOS
 	 * R    L    R    LOS
@@ -29,37 +29,37 @@ int checkState(int itemSide[3])//Posicion 0 = Baby,Posicion 1 = Crap,Posicion 2 
 	int flag = ERR;
 	
 	/*Gandor*/
-	if( (itemSide[BABY]==R)&&(itemSide[CRAP]==R)&&(itemSide[CONE]==R) )
+	if( (itemSide[BABY]==R)&&(itemSide[CRAB]==R)&&(itemSide[CONE]==R) )
 	{
 		flag =  WIN; 
 	}
 	/*LOS*/
-	if( (itemSide[BABY]==R)&&(itemSide[CRAP]==R)&&(itemSide[CONE]==L) )
+	if( (itemSide[BABY]==R)&&(itemSide[CRAB]==R)&&(itemSide[CONE]==L) )
 	{
 		flag =  LOS; 
 	}
 	/*LOS*/
-	if( (itemSide[BABY]==R)&&(itemSide[CRAP]==L)&&(itemSide[CONE]==R) )
+	if( (itemSide[BABY]==R)&&(itemSide[CRAB]==L)&&(itemSide[CONE]==R) )
 	{
 		flag =  LOS; 
 	}
 	/*AGA*/
-	if( (itemSide[BABY]==L)&&(itemSide[CRAP]==R)&&(itemSide[CONE]==R) )
+	if( (itemSide[BABY]==L)&&(itemSide[CRAB]==R)&&(itemSide[CONE]==R) )
 	{
 		flag =  AGA; 
 	}
 	/*AGA*/
-	if( (itemSide[BABY]==L)&&(itemSide[CRAP]==L)&&(itemSide[CONE]==L) )
+	if( (itemSide[BABY]==L)&&(itemSide[CRAB]==L)&&(itemSide[CONE]==L) )
 	{
 		flag =  AGA; 
 	}
 	/*LOS*/
-	if( (itemSide[BABY]==L)&&(itemSide[CRAP]==L)&&(itemSide[CONE]==R) )
+	if( (itemSide[BABY]==L)&&(itemSide[CRAB]==L)&&(itemSide[CONE]==R) )
 	{
 		flag =  LOS; 
 	}
 	/*LOS*/
-	if( (itemSide[BABY]==L)&&(itemSide[CRAP]==R)&&(itemSide[CONE]==L) )
+	if( (itemSide[BABY]==L)&&(itemSide[CRAB]==R)&&(itemSide[CONE]==L) )
 	{
 		flag =  LOS; 
 	}
