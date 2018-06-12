@@ -1,6 +1,5 @@
 #include <iostream>
 
-#define 
 #define WIN 1 //Ganador
 #define LOS 2 //Perdedor
 #define AGA 3 //Iterar de nuevo.
@@ -28,7 +27,7 @@ int checkState(int itemSide[3])//Posicion 0 = Baby,Posicion 1 = Crab,Posicion 2 
 	 */
 	int flag = ERR;
 	
-	/*Gandor*/
+	/*WIN*/
 	if( (itemSide[BABY]==R)&&(itemSide[CRAB]==R)&&(itemSide[CONE]==R) )
 	{
 		flag =  WIN; 
@@ -70,30 +69,23 @@ int checkState(int itemSide[3])//Posicion 0 = Baby,Posicion 1 = Crab,Posicion 2 
 	}
 	return flag;
 }
-
-
-int captureMove(){
-	int arr[3];
-	arr[0]=-1;
-	arr[1]=-1;
-	arr[2]=-1;
-	int opc=0;
-	do{
-		printf("\nBaby: 0\nCrab: 1\nCone: 2\nElemento a desplazar\n-->");
-		scanf("%i",&opc);
-		if( opc<0 || opc >2){
-			printf("No mames we, ese mono existe!");
-			}else{
-				if(arr[opc]==-1)
-					arr[opc]=1;
-				else
-					arr[opc]=-1;		
-			printf("\n El arreglo quedo así \n ");
-			for(int i=0;i<3;i++){
-					printf(" %i ",arr[i]);
-				}
-			printf("\n ");
-				}
-		}while(opc<0 || opc>2);
-
+/**
+ * @autor Erick
+ * Funcion captura movimiento para actualizar los estados
+ * @param arreglo actual de los personajes
+ * @return arreglo con las posiciones capturadas
+ * */
+int* captureMove(int itemSide[3])
+{
+	int estadoBaby;
+	int estadoCrab;
+	int estadoCone;
+	std::cout<<"Ingrese pocision de Baby: ";
+	std::cin>>estadoBaby;
+	std::cout<<"Ingrese pocision de Crab: ";
+	std::cin>>estadoCrab;
+	std::cout<<"Ingrese pocision de Cone: ";
+	std::cin>>estadoCone;
+	return itemSide;
+	
 }
